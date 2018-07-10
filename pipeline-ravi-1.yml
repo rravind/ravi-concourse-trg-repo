@@ -1,0 +1,44 @@
+resources:
+  name: resource-ravi-1
+  type: git
+  source:
+   uri: git@github.com:rravind/ravi-concourse-trg-repo.git
+   branch: master
+   private_key: 
+     -----BEGIN RSA PRIVATE KEY-----
+     MIIEpAIBAAKCAQEA4C0Ib8kDMnvtL7UCQuXuXVF4zgX4Sh+Gz5Irgpds9YFBkLZz
+     AGxUQCnmufExllqNvEtVRy8QfwOr2DkpMyh74Z0E36aTnUH0hp7r9csHVvilDWZp
+     qju6CGLx19YSDWO1IScAJQrW+TNDGX2Ezszv/9n6t3NUdnpFGzuwOM+x/ScOoels
+     xSSJpXL2pt6sRW4aaX5L5knNrZyJYPpUSJxUeAzP66BqksYqlvrW/aIb1Zzmq0Ha
+     CFOKeh3azmI1wvQIK4vc0s46Ki+tmjPfeMc77QSNrAU5A36H65oaXn6rCuFJCpZV
+     nYbsLllUintiIsLY6LlxNaXlECtsfaBr+AjmhQIDAQABAoIBADPfl80uKXQ8IvVg
+     IEbUp+SmHpsl3H9ibjKH81ODsK3anA5deZ0GdDRovcAXJM9S4utIT1JqfJm3gsNE
+     7tisrIXXbLJH/G5uPaQNEDLPKUKhxKemJBtFONYJ90ZnfcPlZ5tlR+5KZNZDW2qB
+     lgK4f2ynxxE+ObQ0tNsJY8yxmtEmEnmFOfsrTbiVt53IvXa0ivWu9TxUoZjEBZdN
+     TSCZqHQJSTc03jwiodjgWCvNhLNn+9eEA1ySuqlMIRgF/v6Smj3xJBOWY+ARsi8j
+     X1TWdixibjNWz0lOp7sm9eFDrqDXXaGekqlJAQOsk3frMhbDKAUCML2MqZ8p1KzH
+     2fdj6L0CgYEA/eWE7H35aRXeMDeKIoUYsxxR4mMmubH565siIq9HonapVyYVLKdF
+     cqVE0wks1ovYiPKx1pn9QXBu41XEDoOg5efnIXoAi7yW3tqCGOa9gXZT6KdPDxfp
+     DHhUG+BhVeajiBRo8vCM2K99dqtlmStwmf5cEWJ3OdMoRJfG1x3eF1MCgYEA4gh6
+     7Wx4ekj+kJfOBrsEF/CvGyVZO8PEADebcuEcxIu/22pvlViw8qF49MbEOzp2Gglk
+     H/vU9MjQO4QLcMEhHl9WtSf5zOhLigMkNDElCqafLgc+WVHvK5KgaHe1CzGtt6Bv
+     c+4xl7Z4wY29yMxJmzwZUIBbgHtUSd5yegqIh8cCgYAIS2A9TZxBR5qbnqTfndOB
+     vnIaYDzaoirU/Jtv4KQJdbDwjOjyLYDCTw3hixIw7B6l0q/mn987LQ4iVSHzi29N
+     M3dEi7TK291d6GuJnrggK5pwJk8Z4iEV7DRrOLhVUxSSlIAdN6iSR6FkqBLInzet
+     gDbHxpy4geJ14zN2wZ4IywKBgQCeOv2C82orgKnkIsDxaT3mXHDYef7LnbG5zTOe
+     6gOve30lZo8SZ3IHiA4anIKGS9idRXG4Chz79w/+eeNgXXKHxon2azOtw/gNd0GC
+     39xkZlwMZrm44WiighSUzSgJ3A8V+tPKvjYtVGmYZVc0F/53E01NU226tZs90uEk
+     mfcVxQKBgQCerYHpY1vTyWnZXK1In6jFLlq+DX7lyA9gcMCY/W2j4EnmDTKG4WEA
+     oUxBHecAfmT5QDqv320TS7rntQ27ScmcBAFzFHS4QaDBgupJDUzq8AlJq4KdNruT
+     LUI+9Lv03CSf8/lHwet/X7xPEtJCw2LVSw+pExMStdsE2gTm7lS5hA==
+     -----END RSA PRIVATE KEY-----
+
+     jobs:
+     - name: job-ravi-1
+
+       plan:
+       - get: resource-ravi-1
+       trigger: true
+       task:
+       - name: task-list-ravi-1
+         file: resource-ravi-1/tasks/task-list-ravi.yml
