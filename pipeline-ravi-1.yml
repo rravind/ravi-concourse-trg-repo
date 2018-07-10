@@ -11,4 +11,4 @@ jobs:
     - get: resource-ravi-1
       trigger: true
     - task: task-list-ravi-1
-      file: resource-ravi-1/tasks/task_list_ravi.yml
+      file: resource-ravi-1/tasks/task-list-ravi.yml
